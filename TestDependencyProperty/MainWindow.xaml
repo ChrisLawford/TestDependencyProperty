@@ -9,10 +9,24 @@
         >
     <Grid     local:SizeObserver.Observe="True"
     local:SizeObserver.ObservedWidth="{Binding Width, Mode=OneWayToSource}"
-    local:SizeObserver.ObservedHeight="{Binding Height, Mode=OneWayToSource}">
-        <StackPanel>
-            <TextBlock Text="{Binding Height }" Background="#FFFF5F5F"/>
-            <TextBlock Text="{Binding Width }" Background="#FF66FF5F"/>
+    local:SizeObserver.ObservedHeight="{Binding Height, Mode=OneWayToSource}"
+              
+              >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="{Binding Height , StringFormat={} The Grid height is {0}}" Background="#FFFF5F5F"/>
+            <TextBlock Text="{Binding Width , StringFormat={} The Grid Width is {0}}" Background="#FF66FF5F"/>
         </StackPanel>
+        <TextBlock local:SizeObserver.Observe="True"
+    local:SizeObserver.ObservedWidth="{Binding TextBlockWidth, Mode=OneWayToSource}"
+    local:SizeObserver.ObservedHeight="{Binding TextBlockHeight, Mode=OneWayToSource}"
+         Text="{Binding TextBlockHeight, StringFormat={} The TextBox height is {0}}" Grid.Row="1" Grid.Column="0"/>
     </Grid>
 </Window>

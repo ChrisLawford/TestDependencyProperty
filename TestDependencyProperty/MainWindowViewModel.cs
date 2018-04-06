@@ -16,5 +16,13 @@ namespace TestDependencyProperty
         private double m_width;
 
         public double Width { get { return m_width; } set { m_width = value; OnPropertyChanged("Width"); } }
+
+        private double m_textblockheight;
+
+        public double TextBlockHeight { get { return m_textblockheight; } set { m_textblockheight = value; OnPropertyChanged("TextBlockHeight"); } }
+
+        private double m_textblockwidth;
+
+        public double TextBlockWidth { get { return m_textblockwidth; } set { m_textblockwidth = value; OnPropertyChanged("TextBlockWidth"); } }
     }
 }
